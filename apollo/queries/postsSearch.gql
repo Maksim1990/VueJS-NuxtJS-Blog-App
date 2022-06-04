@@ -1,0 +1,30 @@
+query ($search:String!, $first: Int!,$page: Int!) {
+  postSearch(search:$search,first:$first, page: $page){
+    data {
+      _id
+      title
+      short_description
+      created_at
+      user{
+        name
+        _id
+        lastname
+      }
+      likes{
+        user{
+          _id
+        }
+      }
+    }
+    paginatorInfo{
+      count
+      currentPage
+      firstItem
+      hasMorePages
+      lastItem
+      lastPage
+      perPage
+      total
+    }
+  }
+}

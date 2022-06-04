@@ -1,0 +1,40 @@
+query MessagesListData($user_id: ID!,$chat_id: ID!,$offset: Int!,$number: Int!,$orderBy:[OrderByClause!]) {
+  messages(user_id:$user_id,chat_id:$chat_id, offset: $offset,number: $number, orderBy:$orderBy){
+    _id
+    text
+    is_read
+    type
+    created_at
+    updated_at
+    sender{
+      name
+      email
+      role
+      enabled
+      _id
+      lastname
+      country
+      city
+      zip
+      address
+      phone
+      birthdate
+      avatar
+    }
+    receiver{
+      name
+      email
+      role
+      enabled
+      _id
+      lastname
+      country
+      city
+      zip
+      address
+      phone
+      birthdate
+      avatar
+    }
+  }
+}

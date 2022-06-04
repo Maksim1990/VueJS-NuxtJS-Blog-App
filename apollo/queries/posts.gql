@@ -1,0 +1,33 @@
+query ($input:PostsInput, $first: Int!,$page: Int!) {
+  posts(input:$input,first:$first, page: $page){
+    data{
+        _id
+        title
+        short_description
+      image_link
+        created_at
+      created_ago
+      user{
+        name
+        _id
+        lastname
+      }
+      likes{
+        user{
+          _id
+        }
+      }
+    }
+    isFromCache
+    paginatorInfo{
+      count
+      currentPage
+      firstItem
+      hasMorePages
+      lastItem
+      lastPage
+      perPage
+      total
+    }
+  }
+}

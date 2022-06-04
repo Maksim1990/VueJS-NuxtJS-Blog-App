@@ -1,0 +1,11 @@
+query {
+  getFaqQuestions{
+    type
+    content{
+      id
+      question
+      answer
+    }
+  }
+}
+

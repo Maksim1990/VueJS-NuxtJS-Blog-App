@@ -1,0 +1,6 @@
+mutation ($email: String!) {
+  resendConfirmationCode(email:$email){
+    confirmed
+    message
+  }
+}

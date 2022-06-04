@@ -1,0 +1,98 @@
+::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+  width: 8px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #b4b2b2;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif !important;
+}
+.m-area {
+  border-style: solid;
+  border-color: #e1dbdb;
+  background-color: #f5f1f1;
+  height: 85vh;
+  padding: 0;
+}
+a{
+  color: #089b7d;
+}
+
+.fixed-p {
+  position: fixed;z-index: 1000;
+}
+.app-link{
+  color: #089b7d;
+}
+.app-auth-link{
+  color: white;
+}
+
+.btn-browse {
+  background-color: #089b7d;
+  font-weight: 800;
+}
+
+.hoveredImage {
+  transition: all .2s ease;
+  transform:scale(1.01);
+  -ms-transform:scale(1.01); /* IE 9 */
+  -moz-transform:scale(1.01); /* Firefox */
+  -webkit-transform:scale(1.01); /* Safari and Chrome */
+  -o-transform:scale(1.01);
+}
+
+.info{
+  font-size: 12px;
+}
+
+.b-left-auth,.b-image-auth{
+  display: inline-grid;
+  align-items: center;
+  height: 70vh;
+}
+
+.app-link:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.app-avatar{
+  border-radius: unset;
+}
+.h100{
+  height: 100%;
+}
+
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+.d-cn {
+  height: 85%;
+}
+.btn-browse{
+  border-radius: 30px;
+  border-width: 0;
+}
+
+@media (max-width: 800px) {
+  .d-cn {
+    overflow-y: hidden;
+  }
+}

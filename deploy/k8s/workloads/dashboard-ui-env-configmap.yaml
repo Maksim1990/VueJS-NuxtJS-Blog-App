@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dashboard-ui-config
+data:
+  NUXT_ENV_API_URL: "https://api.skillsmaster.io"
+  NUXT_ENV_ENCRYPTION_SECRET_KEY: "skillsmastersecretkey"
+  NUXT_ENV_COOKIE_NAME: "sm-token"
+  NUXT_ENV_COOKIE_DOMAIN: "https://skillsmaster.io"
+  NUXT_ENV_APP_VERSION: "v1.0.1"

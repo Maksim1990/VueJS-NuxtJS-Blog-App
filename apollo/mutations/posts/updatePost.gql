@@ -1,0 +1,28 @@
+mutation ($id:ID!,$title:String, $description: String,$short_description: String!,$type: PostType!) {
+  updatePost(_id:$id,title:$title, description: $description,short_description:$short_description,type: $type) {
+    _id
+    title
+    short_description
+    description
+    type
+    isLikedByAuthUser
+    isBookmarkedByAuthUser
+    created_at
+    user{
+      name
+      email
+      role
+      enabled
+      _id
+    }
+    likes{
+      user{
+        name
+        email
+        role
+        enabled
+        _id
+      }
+    }
+  }
+}

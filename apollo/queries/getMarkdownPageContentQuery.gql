@@ -1,0 +1,9 @@
+query ($type:String!){
+  getMarkdownPageContent(type:$type){
+    type
+    message
+    status
+    content
+  }
+}
+

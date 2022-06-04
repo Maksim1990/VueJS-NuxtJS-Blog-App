@@ -1,0 +1,30 @@
+query ($search:String!, $first: Int!,$page: Int!) {
+  userSearch(search:$search,first:$first, page: $page){
+    data {
+      name
+      email
+      role
+      enabled
+      _id
+      lastname
+      country
+      city
+      zip
+      avatar
+      address
+      phone
+      birthdate
+      avatar
+    }
+    paginatorInfo{
+      count
+      currentPage
+      firstItem
+      hasMorePages
+      lastItem
+      lastPage
+      perPage
+      total
+    }
+  }
+}

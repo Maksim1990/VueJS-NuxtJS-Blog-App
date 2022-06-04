@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: dashboard-ui
+  name: dashboard-ui
+spec:
+  minReadySeconds: 0
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: dashboard-ui
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 50%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: dashboard-ui
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - backend
+                topologyKey: kubernetes.io/hostname
+              weight: 100
+
+      containers:
+        - name: dashboard-ui
+          envFrom:
+            - configMapRef:
+                name: dashboard-ui-config
+          image: maksim1990/dashboard-ui:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+              name: front-port
+          resources:
+            limits:
+              cpu: 30m
+              memory: 100M
+            requests:
+              cpu: 30m
+              memory: 100M
+          volumeMounts:
+            - mountPath: /var/www
+              name: codebase
+
+      imagePullSecrets:
+        - name: myregistrykey
+
+      volumes:
+        - emptyDir: {}
+          name: codebase

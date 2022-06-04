@@ -1,0 +1,18 @@
+query ($id:ID!) {
+  user(_id:$id) {
+    name
+    email
+    role
+    enabled
+    _id
+    lastname
+    country
+    city
+    zip
+    address
+    phone
+    birthdate
+    avatar
+    created_ago
+  }
+}

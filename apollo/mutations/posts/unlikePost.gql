@@ -1,0 +1,5 @@
+mutation ($post_id:ID!) {
+  unlike(post_id:$post_id) {
+    _id
+  }
+}

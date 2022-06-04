@@ -1,0 +1,17 @@
+{
+  auth{
+    name
+    email
+    role
+    enabled
+    _id
+    lastname
+    country
+    city
+    zip
+    address
+    phone
+    birthdate
+    avatar
+  }
+}

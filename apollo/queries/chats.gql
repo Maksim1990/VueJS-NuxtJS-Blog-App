@@ -1,0 +1,18 @@
+query ($user_id: ID!,$offset: Int!,$number: Int!,$orderBy:[OrderByClause!]) {
+  chats(user_id:$user_id, offset: $offset,number:$number, orderBy:$orderBy){
+    first_member{
+      name
+      _id
+    }
+    second_member{
+      name
+      _id
+    }
+    _id
+    number_messages
+    number_unread_messages
+    has_messages
+    created_at
+    updated_at
+  }
+}

@@ -1,0 +1,40 @@
+query ($id:ID!) {
+  chat(_id:$id) {
+    first_member{
+      name
+      email
+      role
+      enabled
+      _id
+      lastname
+      country
+      city
+      zip
+      address
+      phone
+      birthdate
+      avatar
+    }
+    second_member{
+      name
+      email
+      role
+      enabled
+      _id
+      lastname
+      country
+      city
+      zip
+      address
+      phone
+      birthdate
+      avatar
+    }
+    _id
+    number_messages
+    number_unread_messages
+    has_messages
+    created_at
+    updated_at
+  }
+}

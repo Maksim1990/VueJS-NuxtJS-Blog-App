@@ -1,0 +1,33 @@
+query ($input:UsersInput, $first: Int!,$page: Int!) {
+  users(input:$input,first:$first, page: $page){
+    data {
+      name
+      email
+      role
+      enabled
+      _id
+      lastname
+      country
+      city
+      zip
+      avatar
+      address
+      phone
+      birthdate
+      avatar
+      created_at
+      created_ago
+    }
+    isFromCache
+    paginatorInfo{
+      count
+      currentPage
+      firstItem
+      hasMorePages
+      lastItem
+      lastPage
+      perPage
+      total
+    }
+  }
+}

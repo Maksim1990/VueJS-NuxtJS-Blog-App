@@ -1,0 +1,36 @@
+query ($id:ID!, $user_id_open_post: ID) {
+  post(_id:$id,user_id_open_post:$user_id_open_post) {
+    _id
+    title
+    short_description
+    description
+    type
+    image_link
+    isLikedByAuthUser
+    isBookmarkedByAuthUser
+    created_at
+    created_ago
+    user{
+      name
+      email
+      role
+      enabled
+      _id
+      lastname
+      country
+      city
+      zip
+      address
+      phone
+      birthdate
+      avatar
+    }
+    likes{
+      user{
+        name
+        _id
+        lastname
+      }
+    }
+  }
+}

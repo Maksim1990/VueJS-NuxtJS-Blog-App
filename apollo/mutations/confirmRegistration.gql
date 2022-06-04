@@ -1,0 +1,6 @@
+mutation ($email: String! $code: String!) {
+  confirmRegistration(email:$email code:$code){
+    confirmed
+    message
+  }
+}
